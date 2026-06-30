@@ -37,6 +37,9 @@ func Atoi(str string) int {
 
 func Itoa(num int) string {
 	str := ""
+	if num == 0 {
+		return string(rune(num + '0'))
+	}
 	for ; num > 0; num /= 10 {
 		digit := num % 10
 		str = string(rune(digit+'0')) + str
