@@ -5,18 +5,41 @@ import "fmt"
 // Repeat — see README, Task 1. Must be recursive (no loops).
 func Repeat(s string, n int) string {
 	// TODO: implement
-	return ""
+	if n < 1 {
+		return ""
+	}
+	if n == 1 {
+		return s
+	}
+
+	return s + Repeat(s, n-1)
 }
 
 // CountChar — see README, Task 2. Must be recursive (no loops).
 func CountChar(s string, target byte) int {
 	// TODO: implement
-	return 0
+	if len(s) < 1 {
+		return 0
+	}
+	res := CountChar(s[1:], target)
+	if s[0] == target {
+		res += 1
+	}
+	return res
 }
 
 // IsSorted — see README, Task 3. Must be recursive (no loops).
 func IsSorted(nums []int) bool {
 	// TODO: implement
+	if len(nums) < 2 {
+		return true
+	}
+	if len(nums) == 2 {
+		return nums[0] <= nums[1]
+	}
+	if IsSorted(nums[1:]) && nums[0] <= nums[1] {
+		return true
+	}
 	return false
 }
 
