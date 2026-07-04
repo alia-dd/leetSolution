@@ -48,17 +48,18 @@ func merge(first, second []Student) []Student {
 
 	return merged
 }
-func main() {
-	students := []Student{
-		{"Alice", 3.8},
-		{"Bob", 3.5},
-		{"Carol", 3.8},
-		{"Dave", 3.2},
-		{"Eve", 3.5},
-	}
 
-	sorted := mergeSort(students)
-	for _, s := range sorted {
-		fmt.Printf("%s: %.1f\n", s.Name, s.GPA)
-	}
-}
+// func main() {
+// 	students := []Student{
+// 		{"Alice", 3.8},
+// 		{"Bob", 3.5},
+// 		{"Carol", 3.8},
+// 		{"Dave", 3.2},
+// 		{"Eve", 3.5},
+// 	}
+
+// 	sorted := mergeSort(students)
+// 	for _, s := range sorted {
+// 		fmt.Printf("%s: %.1f\n", s.Name, s.GPA)
+// 	}
+// }
