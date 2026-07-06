@@ -6,10 +6,20 @@ import "fmt"
 // (duplicates kept). Must be recursive.
 func Permutations(s string) []string {
 	// TODO: implement
-	return nil
+	if len(s) <= 1 {
+		return []string{s}
+	}
+
+	f := string(s[:1])
+	res := Permutations(s[1:])
+
+	// res1 := Permutations(s[2:])
+	fmt.Println(f, ">", res)
+	// Permutations()
+	return res
 }
 
 func main() {
 	// Quick eyeball runs — adjust freely while solving.
-	fmt.Println(Permutations("abc"))
+	fmt.Println(Permutations("abcd"))
 }

@@ -20,7 +20,7 @@ Return the ordered list of moves that transfers a stack of `n` disks from peg
 Tower of Hanoi:
 
 - move exactly one disk at a time (the top disk of a peg),
-- never place a larger disk on top of a smaller one.
+- noever place a larger disk on tp of a smaller one.
 
 Each move is a string `"X->Y"` meaning "move the top disk from peg `X` to peg
 `Y`". Assume `n >= 0` and that `from`, `to`, `via` are three distinct peg names.
