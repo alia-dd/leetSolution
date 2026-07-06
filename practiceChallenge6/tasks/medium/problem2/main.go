@@ -10,16 +10,21 @@ func Permutations(s string) []string {
 		return []string{s}
 	}
 
-	f := string(s[:1])
+	f := string(s[0])
 	res := Permutations(s[1:])
 
-	// res1 := Permutations(s[2:])
-	fmt.Println(f, ">", res)
-	// Permutations()
-	return res
+	var result []string
+
+	for _, p := range res {
+		for i := 0; i <= len(p); i++ {
+			newStr := p[:i] + f + p[i:]
+			result = append(result, newStr)
+		}
+	}
+	return result
 }
 
 func main() {
 	// Quick eyeball runs — adjust freely while solving.
-	fmt.Println(Permutations("abcd"))
+	fmt.Println(Permutations("abc"))
 }
